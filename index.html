@@ -11,7 +11,7 @@
 <!--cdn of babel-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <title>Lecture 6:Component</title>
+    <title>Lecture 7:propos</title>
 </head>
 <body>
     <div id="app" ></div>
@@ -21,26 +21,20 @@
         function App(){
             return (
                 <div>
-                    <Header/>
-                    <Content/>
-                    <Footer/>
+                    <Header name="Header1"/>
+                    <Content name="Contetn1"/>
+                    <Footer name ="Footer1"/>
                 </div>
             )
         }
         
-//Second Methode is the most used
-//i will write in darja to understand more
-//choufe frr ak tchoufe hadi la classe Header hadik tal9aha dakle wahde docier wasmo components li tal9ah dakle docier 
-//wasmah src
-//sema kole khatra 3endk kach compnents dirlo assmeta3o.js thato dakle components o dakle src
-//kayn wahde docier wasmah App.js li nhato fih  les compnents ta3na o yjo sous form de balise hna rah
-//dayr kolchi m3a ba3de bach yachrah
+
     //Header Component
         class Header extends React.Component{
             render(){
                 return (
                 <div>
-                    <header>Header</header>
+                    <header>{this.props.name}</header>
                 </div>
                  )
             }
@@ -51,7 +45,7 @@
                 render(){
                     return (
                     <div>
-                        <main>Content</main>
+                        <main>{this.props.name}</main>
                     </div>
                     )
                 }
@@ -61,7 +55,7 @@
                         render(){
                             return (
                             <div>
-                                <footer>Footer</footer>
+                                <footer>{this.props.name}</footer>
                             </div>
                             )
                         }
