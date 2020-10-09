@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--cdn of react-->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+<!--cdn of babel-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <title>Lecture 5</title>
+</head>
+<body>
+    <div id="app" ></div>
+
+        <script type="text/babel"> 
+        //mentioned I've face a small error just cause i've wrote REactDom instead of ReactDom 
+        //React is case Sensitive
+//First Element
+            const name="React 2020";
+            const ele1= <p className="test">Hello {name}</p>;
+//Second Element
+            const ele2=React.createElement(
+                'p',
+                {className:'test'},
+                'Hello React 2020'
+                 )
+//Third Element 
+            const ele3=React.createElement(
+                'p',
+                {className:'test'},
+                React.createElement(
+                    'span',
+                    null,
+                    'SPAN 1'
+                    ),
+                React.createElement(
+                    'i',
+                    null,
+                    'Italic'
+                    ),
+
+                'Hello React 2020'
+                 )
+           // ReactDOM.render(ele1,document.getElementById('app'));
+           //ReactDOM.render(ele2,document.getElementById('app'));
+           ReactDOM.render(ele3,document.getElementById('app'));
+        </script>
+
+    
+    
+</body>
+</html>
