@@ -11,43 +11,62 @@
 <!--cdn of babel-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <title>Lecture 5</title>
+    <title>Lecture 6:Component</title>
 </head>
 <body>
     <div id="app" ></div>
 
-        <script type="text/babel"> 
-        //mentioned I've face a small error just cause i've wrote REactDom instead of ReactDom 
-        //React is case Sensitive
-//First Element
-            const name="React 2020";
-            const ele1= <p className="test">Hello {name}</p>;
-//Second Element
-            const ele2=React.createElement(
-                'p',
-                {className:'test'},
-                'Hello React 2020'
+        <script type="text/babel">
+//Hadi hiya App.js
+        function App(){
+            return (
+                <div>
+                    <Header/>
+                    <Content/>
+                    <Footer/>
+                </div>
+            )
+        }
+        
+//Second Methode is the most used
+//i will write in darja to understand more
+//choufe frr ak tchoufe hadi la classe Header hadik tal9aha dakle wahde docier wasmo components li tal9ah dakle docier 
+//wasmah src
+//sema kole khatra 3endk kach compnents dirlo assmeta3o.js thato dakle components o dakle src
+//kayn wahde docier wasmah App.js li nhato fih  les compnents ta3na o yjo sous form de balise hna rah
+//dayr kolchi m3a ba3de bach yachrah
+    //Header Component
+        class Header extends React.Component{
+            render(){
+                return (
+                <div>
+                    <header>Header</header>
+                </div>
                  )
-//Third Element 
-            const ele3=React.createElement(
-                'p',
-                {className:'test'},
-                React.createElement(
-                    'span',
-                    null,
-                    'SPAN 1'
-                    ),
-                React.createElement(
-                    'i',
-                    null,
-                    'Italic'
-                    ),
-
-                'Hello React 2020'
-                 )
-           // ReactDOM.render(ele1,document.getElementById('app'));
-           //ReactDOM.render(ele2,document.getElementById('app'));
-           ReactDOM.render(ele3,document.getElementById('app'));
+            }
+        }
+       
+    //Content Component
+        class Content extends React.Component{
+                render(){
+                    return (
+                    <div>
+                        <main>Content</main>
+                    </div>
+                    )
+                }
+            }
+    //Footer Component
+            class Footer extends React.Component{
+                        render(){
+                            return (
+                            <div>
+                                <footer>Footer</footer>
+                            </div>
+                            )
+                        }
+                    }
+            ReactDOM.render(<App/>,document.getElementById('app'))
         </script>
 
     
