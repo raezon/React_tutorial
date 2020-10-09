@@ -11,50 +11,70 @@
 <!--cdn of babel-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <title>Lecture 7:propos</title>
+    <title>Lecture 8:state</title>
 </head>
 <body>
     <div id="app" ></div>
 
         <script type="text/babel">
-//Hadi hiya App.js
+//App Component  [Parent ]
         function App(){
             return (
                 <div>
-                    <Header name="Header1"/>
-                    <Content name="Contetn1"/>
-                    <Footer name ="Footer1"/>
+                    
+                    <Header name="Props Header1"/>
+                    <Content name="Props Contetn1"/>
+                    <Footer name ="ProposFooter1"/>
                 </div>
             )
         }
         
 
-    //Header Component
+    //Header Component [child]
         class Header extends React.Component{
+            state={
+                
+                name :'state Header',
+                age :22
+            }
             render(){
+                
                 return (
                 <div>
-                    <header>{this.props.name}</header>
+                    <p>{this.state.name}</p>
+                    <header>{this.props.name}and </header>
                 </div>
                  )
             }
         }
        
-    //Content Component
+    //Content Component [child]
         class Content extends React.Component{
+            state={
+                
+                name :'state Content',
+                age :22
+            }
                 render(){
                     return (
                     <div>
+                        <p>{this.state.name}</p>
                         <main>{this.props.name}</main>
                     </div>
                     )
                 }
             }
-    //Footer Component
+    //Footer Component [child]
             class Footer extends React.Component{
+                            state={
+                            
+                            name :'state Footer',
+                            age :22
+                        }
                         render(){
                             return (
                             <div>
+                                <p>{this.state.name}</p>
                                 <footer>{this.props.name}</footer>
                             </div>
                             )
