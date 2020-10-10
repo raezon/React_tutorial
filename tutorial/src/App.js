@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Child from './Child';
+import Items from './components/items.js'
 
 class  App extends Component {
-  Test(){
-    console.log('Test !')
-  }
-  //arrow function we can write it on one line if it contains one line
-  //if one parametre doesn't need paranthesis
-  
-  Test=()=>{
-    console.log('Test !')
-  }
+  state={
+    items:[
+        {id:1,name:'ahmed',age:22},
+        {id:2,name:'tarek',age:25},
+        
+    ]
+}
+
   render(){
+ 
     return (
       <div className="App">
-        <Child/>
-        {this.test}
+        <Items items={this.state.items}/>
+        {Math.random()*10}
+
       </div>
     );
   }

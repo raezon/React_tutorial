@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
-
-class Child extends Component{
-    render(){
+//statless componennt
+const Child =(props)=> {
+    
         return(
-            <div className="App">
-                Hello React 2020
+            <div >
+               {props.test}
                 </div>
         )
-    }
+    
 
 }
 export default Child;
