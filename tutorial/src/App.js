@@ -1,29 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {x as num1,y as num2} from './module';
-import Test2 from './module';
-import {default as hmida} from './module';
+import Child from './Child';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React{num1+num2}{hmida}
-        </a>
-      </header>
-    </div>
-  );
+class  App extends Component {
+  Test(){
+    console.log('Test !')
+  }
+  //arrow function we can write it on one line if it contains one line
+  //if one parametre doesn't need paranthesis
+  
+  Test=()=>{
+    console.log('Test !')
+  }
+  render(){
+    return (
+      <div className="App">
+        <Child/>
+        {this.test}
+      </div>
+    );
+  }
+
 }
 
 export default App;
