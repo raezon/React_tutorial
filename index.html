@@ -11,75 +11,58 @@
 <!--cdn of babel-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <title>Lecture 8:state</title>
+    <title>Lecture 9:state vs propos</title>
 </head>
 <body>
     <div id="app" ></div>
 
         <script type="text/babel">
 //App Component  [Parent ]
-        function App(){
-            return (
+       // function App(){
+        
+        class App extends React.Component{
+            state={
+            parent:'App Component is Parent Component'
+        }
+            render(){
+                return (
                 <div>
                     
-                    <Header name="Props Header1"/>
-                    <Content name="Props Contetn1"/>
-                    <Footer name ="ProposFooter1"/>
+                    <Child name={this.state.parent}/>
+                    <Child2 name="Props Child2"/>
+                    State of This Component is {this.state.parent}
+                  
                 </div>
             )
+            }
         }
         
 
-    //Header Component [child]
-        class Header extends React.Component{
+    //Child [child]
+        class Child extends React.Component{
             state={
                 
                 name :'state Header',
                 age :22
-            }
+            };
             render(){
                 
                 return (
                 <div>
-                    <p>{this.state.name}</p>
-                    <header>{this.props.name}and </header>
+                  
+                    <p>{this.props.name} </p>
                 </div>
                  )
             }
         }
+        //second child with name childa
+        function Child2(props){
+            return(
+                <p>Child Components and props is {props.name}</p>
+            )
+        }
        
-    //Content Component [child]
-        class Content extends React.Component{
-            state={
-                
-                name :'state Content',
-                age :22
-            }
-                render(){
-                    return (
-                    <div>
-                        <p>{this.state.name}</p>
-                        <main>{this.props.name}</main>
-                    </div>
-                    )
-                }
-            }
-    //Footer Component [child]
-            class Footer extends React.Component{
-                            state={
-                            
-                            name :'state Footer',
-                            age :22
-                        }
-                        render(){
-                            return (
-                            <div>
-                                <p>{this.state.name}</p>
-                                <footer>{this.props.name}</footer>
-                            </div>
-                            )
-                        }
-                    }
+    
             ReactDOM.render(<App/>,document.getElementById('app'))
         </script>
 
