@@ -5,7 +5,12 @@ import Items from './components/items.js'
 
 class  App extends Component {
   state={
-    name:''
+    items:[
+      {id:1,name:"ahmed",age:22,count:2},
+      {id:2,name:"tarek",age:25,count:1},
+      {id:3,name:"yasser",age:26,count:3},
+   
+    ]
   }
   handleChange=(e)=>{
     this.setState({
@@ -22,12 +27,8 @@ class  App extends Component {
  
     return (
       <div className="App">
-        Form Part1
-        <form onSubmit={this.handleSubmit}>
-          <textarea type="text"  onChange={this.handleChange}/>
-          <input type="submit"  value="send"/>
-        
-        </form>
+        Condition Output
+        <Items items={this.state.items}/>
         {this.state.name}
 
       </div>

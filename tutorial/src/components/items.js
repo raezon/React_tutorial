@@ -2,24 +2,20 @@ import React,{Component} from 'react';
 
 class Items extends Component{
     render(){
-        const {items}=this.props
-        const theItems=items.map(item =>{
-            return(
+        const {items}=this.props;
+        const theItems=items.map( item =>{
+            return item.count > 0 ? (
                 <div key={Math.random()*10}>
                     <p>{item.id}</p>
                     <p>{item.name}</p>
                     <p>{item.age}</p>
                 </div>
-            )
+                ) : null
+
         })
-        //const id=this.propos.id;
-        //const name=this.propos.name;
-        //const age=this.propos.age;
-        //const {id1,name1,age1}=this.propos;
         return(
             <div>
                 {theItems}
-           
             </div>
         )
     }
